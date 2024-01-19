@@ -1,0 +1,49 @@
+	Modern Recommender Systems are complex and have multiple components  that connected and are sophisticated individually
+In youtube for instance they are divided as follows:
+a) Retrieval - it takes about a million videos and narrows them to about a thousand
+b) Ranking - Narrows this thousands to a couple hundred
+c) Post ranking - narrows from a couple hundred to a dozen (ensures diversity, freshness and awareness) to give valuable recommendations
+If used as one model they can have a latency that can't be supported in production
+
+They are complex to train for the following reasons:
+a) They are hard to train - due to high-cardinality sparse features and multiple objectives to train for
+b) Tricky to evaluate - their offline metrics can be highly misleading (actions on video site are not a reflection of what videos you like). A new model may be good initially but become worse over time
+due to its novelty wearing off
+c) Tricky to deploy - offline metrics can be huge vocabularies requiring approximate retrieval for acceptable latency. Most models have multiple stages of retrieval,
+ranking and post-optimization( retrieval has to happen in milliseconds and cannot be done by a simple softmax)
+Google has open sources a few software tools to help in this
+	End to end recommender systems
+We will use end to end recommender library (tensorflow) for doing this
+a) TF Recommender systems
+. Built on tensorflow and keras
+. Provides a set of components for building, evaluating, and deploying recommender systems
+. Aims at covering the entire stack from retrieval through ranking, to post-ranking
+b) ScaNN (Scalable Nearest Neighbors)
+Helps in efficient vector similarity search
+. Perfect for candidate generation in retrieval stage
+. Fast matching and retrieval of similar items from massive and moderate size databases
+. State-of-art implementations of modern ANN techniques(approximate nearest neighbour)
+c) TensorFlow Ranking
+Scalable learning-to-rank library
+. Scalable deep learning library for learning-to-rank in TensorFlow
+. Supports popular losses, ranking metrics and scoring functions
+. Widely used inside and outside of Google
+( devices are limited in storage so you have to save the most relevant results in the critical storage areas.)
+d) Tensorflow Lite
+On-device recommendation
+. An end to end reference app that demos a novel recommendation system fully deployable in mobile environment
+. Full user privacy protection, lightweight inference without network dependency and instant response to user's interaction or context changes
+
+https://github.com/tensorflow
+
+
+
+
+
+
+
+
+
+
+
+
