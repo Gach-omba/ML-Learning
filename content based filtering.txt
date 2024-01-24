@@ -1,0 +1,8 @@
+Content-based filtering uses item features to recommend other item 
+When a user install a health app you can recommend another health related app ( only uses items)
+Collaborative filtering - uses simlarities between users and items simultaneously to provide recommendations
+Recommends item to user A based on the similarities with user B
+Here we create embeddings for each column and row to represent the item and level of interest
+
+
+
